@@ -1,0 +1,551 @@
+2026-03-12 18:56:41,047 - agent - ERROR-file_handler.py:32 - [listdir_with_allowed_type]F:\heimarang\agent\data不是文件夹
+2026-03-12 18:56:41,049 - agent - ERROR-file_handler.py:9 - [md5计算]文件F:\heimarang\agent\data\扫地机器人100问.pdf不存在
+2026-03-12 18:56:41,050 - agent - ERROR-file_handler.py:12 - [md5计算]路径F:\heimarang\agent\data\扫地机器人100问.pdf不存在
+2026-03-12 18:56:41,356 - agent - ERROR-vector_store.py:77 - [加载知识库]F:\heimarang\agent\data\扫地机器人100问.pdf加载失败：`pypdf` package not found, please install it with `pip install pypdf`
+Traceback (most recent call last):
+  File "F:\Users\44337\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_community\document_loaders\parsers\pdf.py", line 359, in lazy_parse
+    import pypdf
+ModuleNotFoundError: No module named 'pypdf'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\heimarang\agent\rag\vector_store.py", line 62, in load_document
+    documents:list[Document]=get_file_documents(path)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\heimarang\agent\rag\vector_store.py", line 49, in get_file_documents
+    return pdfloader(readpath)
+           ^^^^^^^^^^^^^^^^^^^
+  File "F:\heimarang\agent\utils\file_handler.py", line 41, in pdfloader
+    return PyPDFLoader(file_path,passwd).load()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Users\44337\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\document_loaders\base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Users\44337\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_community\document_loaders\pdf.py", line 305, in lazy_load
+    yield from self.parser.lazy_parse(blob)
+  File "F:\Users\44337\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_community\document_loaders\parsers\pdf.py", line 361, in lazy_parse
+    raise ImportError(
+ImportError: `pypdf` package not found, please install it with `pip install pypdf`
+2026-03-12 18:56:41,360 - agent - ERROR-file_handler.py:9 - [md5计算]文件F:\heimarang\agent\data\扫地机器人100问2.txt不存在
+2026-03-12 18:56:41,360 - agent - ERROR-file_handler.py:12 - [md5计算]路径F:\heimarang\agent\data\扫地机器人100问2.txt不存在
+2026-03-12 18:56:41,362 - agent - ERROR-vector_store.py:77 - [加载知识库]F:\heimarang\agent\data\扫地机器人100问2.txt加载失败：Error loading F:\heimarang\agent\data\扫地机器人100问2.txt
+Traceback (most recent call last):
+  File "F:\Users\44337\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_community\document_loaders\text.py", line 43, in lazy_load
+    text = f.read()
+           ^^^^^^^^
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xab in position 4: illegal multibyte sequence
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\heimarang\agent\rag\vector_store.py", line 62, in load_document
+    documents:list[Document]=get_file_documents(path)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\heimarang\agent\rag\vector_store.py", line 47, in get_file_documents
+    return txtloader(readpath)
+           ^^^^^^^^^^^^^^^^^^^
+  File "F:\heimarang\agent\utils\file_handler.py", line 44, in txtloader
+    return TextLoader(file_path,passwd).load()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Users\44337\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\document_loaders\base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Users\44337\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_community\document_loaders\text.py", line 56, in lazy_load
+    raise RuntimeError(f"Error loading {self.file_path}") from e
+RuntimeError: Error loading F:\heimarang\agent\data\扫地机器人100问2.txt
+2026-03-12 18:56:41,364 - agent - ERROR-file_handler.py:9 - [md5计算]文件F:\heimarang\agent\data\扫拖一体机器人100问.txt不存在
+2026-03-12 18:56:41,365 - agent - ERROR-file_handler.py:12 - [md5计算]路径F:\heimarang\agent\data\扫拖一体机器人100问.txt不存在
+2026-03-12 18:56:41,366 - agent - ERROR-vector_store.py:77 - [加载知识库]F:\heimarang\agent\data\扫拖一体机器人100问.txt加载失败：Error loading F:\heimarang\agent\data\扫拖一体机器人100问.txt
+Traceback (most recent call last):
+  File "F:\Users\44337\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_community\document_loaders\text.py", line 43, in lazy_load
+    text = f.read()
+           ^^^^^^^^
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xab in position 4: illegal multibyte sequence
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\heimarang\agent\rag\vector_store.py", line 62, in load_document
+    documents:list[Document]=get_file_documents(path)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\heimarang\agent\rag\vector_store.py", line 47, in get_file_documents
+    return txtloader(readpath)
+           ^^^^^^^^^^^^^^^^^^^
+  File "F:\heimarang\agent\utils\file_handler.py", line 44, in txtloader
+    return TextLoader(file_path,passwd).load()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Users\44337\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\document_loaders\base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Users\44337\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_community\document_loaders\text.py", line 56, in lazy_load
+    raise RuntimeError(f"Error loading {self.file_path}") from e
+RuntimeError: Error loading F:\heimarang\agent\data\扫拖一体机器人100问.txt
+2026-03-12 18:56:41,367 - agent - ERROR-file_handler.py:9 - [md5计算]文件F:\heimarang\agent\data\故障排除.txt不存在
+2026-03-12 18:56:41,368 - agent - ERROR-file_handler.py:12 - [md5计算]路径F:\heimarang\agent\data\故障排除.txt不存在
+2026-03-12 18:56:41,370 - agent - ERROR-vector_store.py:77 - [加载知识库]F:\heimarang\agent\data\故障排除.txt加载失败：Error loading F:\heimarang\agent\data\故障排除.txt
+Traceback (most recent call last):
+  File "F:\Users\44337\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_community\document_loaders\text.py", line 43, in lazy_load
+    text = f.read()
+           ^^^^^^^^
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xab in position 2: illegal multibyte sequence
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\heimarang\agent\rag\vector_store.py", line 62, in load_document
+    documents:list[Document]=get_file_documents(path)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\heimarang\agent\rag\vector_store.py", line 47, in get_file_documents
+    return txtloader(readpath)
+           ^^^^^^^^^^^^^^^^^^^
+  File "F:\heimarang\agent\utils\file_handler.py", line 44, in txtloader
+    return TextLoader(file_path,passwd).load()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Users\44337\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\document_loaders\base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Users\44337\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_community\document_loaders\text.py", line 56, in lazy_load
+    raise RuntimeError(f"Error loading {self.file_path}") from e
+RuntimeError: Error loading F:\heimarang\agent\data\故障排除.txt
+2026-03-12 18:56:41,371 - agent - ERROR-file_handler.py:9 - [md5计算]文件F:\heimarang\agent\data\维护保养.txt不存在
+2026-03-12 18:56:41,371 - agent - ERROR-file_handler.py:12 - [md5计算]路径F:\heimarang\agent\data\维护保养.txt不存在
+2026-03-12 18:56:41,373 - agent - ERROR-vector_store.py:77 - [加载知识库]F:\heimarang\agent\data\维护保养.txt加载失败：Error loading F:\heimarang\agent\data\维护保养.txt
+Traceback (most recent call last):
+  File "F:\Users\44337\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_community\document_loaders\text.py", line 43, in lazy_load
+    text = f.read()
+           ^^^^^^^^
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xab in position 4: illegal multibyte sequence
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\heimarang\agent\rag\vector_store.py", line 62, in load_document
+    documents:list[Document]=get_file_documents(path)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\heimarang\agent\rag\vector_store.py", line 47, in get_file_documents
+    return txtloader(readpath)
+           ^^^^^^^^^^^^^^^^^^^
+  File "F:\heimarang\agent\utils\file_handler.py", line 44, in txtloader
+    return TextLoader(file_path,passwd).load()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Users\44337\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\document_loaders\base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Users\44337\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_community\document_loaders\text.py", line 56, in lazy_load
+    raise RuntimeError(f"Error loading {self.file_path}") from e
+RuntimeError: Error loading F:\heimarang\agent\data\维护保养.txt
+2026-03-12 18:56:41,373 - agent - ERROR-file_handler.py:9 - [md5计算]文件F:\heimarang\agent\data\选购指南.txt不存在
+2026-03-12 18:56:41,374 - agent - ERROR-file_handler.py:12 - [md5计算]路径F:\heimarang\agent\data\选购指南.txt不存在
+2026-03-12 18:56:41,375 - agent - ERROR-vector_store.py:77 - [加载知识库]F:\heimarang\agent\data\选购指南.txt加载失败：Error loading F:\heimarang\agent\data\选购指南.txt
+Traceback (most recent call last):
+  File "F:\Users\44337\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_community\document_loaders\text.py", line 43, in lazy_load
+    text = f.read()
+           ^^^^^^^^
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xab in position 2: illegal multibyte sequence
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\heimarang\agent\rag\vector_store.py", line 62, in load_document
+    documents:list[Document]=get_file_documents(path)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\heimarang\agent\rag\vector_store.py", line 47, in get_file_documents
+    return txtloader(readpath)
+           ^^^^^^^^^^^^^^^^^^^
+  File "F:\heimarang\agent\utils\file_handler.py", line 44, in txtloader
+    return TextLoader(file_path,passwd).load()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Users\44337\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\document_loaders\base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Users\44337\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_community\document_loaders\text.py", line 56, in lazy_load
+    raise RuntimeError(f"Error loading {self.file_path}") from e
+RuntimeError: Error loading F:\heimarang\agent\data\选购指南.txt
+2026-03-12 19:00:49,337 - agent - ERROR-file_handler.py:32 - [listdir_with_allowed_type]F:\heimarang\agent\data不是文件夹
+2026-03-12 19:00:49,600 - agent - ERROR-vector_store.py:77 - [加载知识库]F:\heimarang\agent\data\扫地机器人100问.pdf加载失败：`pypdf` package not found, please install it with `pip install pypdf`
+Traceback (most recent call last):
+  File "F:\Users\44337\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_community\document_loaders\parsers\pdf.py", line 359, in lazy_parse
+    import pypdf
+ModuleNotFoundError: No module named 'pypdf'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\heimarang\agent\rag\vector_store.py", line 62, in load_document
+    documents:list[Document]=get_file_documents(path)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\heimarang\agent\rag\vector_store.py", line 49, in get_file_documents
+    return pdfloader(readpath)
+           ^^^^^^^^^^^^^^^^^^^
+  File "F:\heimarang\agent\utils\file_handler.py", line 41, in pdfloader
+    return PyPDFLoader(file_path,passwd).load()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Users\44337\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\document_loaders\base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Users\44337\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_community\document_loaders\pdf.py", line 305, in lazy_load
+    yield from self.parser.lazy_parse(blob)
+  File "F:\Users\44337\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_community\document_loaders\parsers\pdf.py", line 361, in lazy_parse
+    raise ImportError(
+ImportError: `pypdf` package not found, please install it with `pip install pypdf`
+2026-03-12 19:00:49,603 - agent - ERROR-vector_store.py:77 - [加载知识库]F:\heimarang\agent\data\扫地机器人100问2.txt加载失败：Error loading F:\heimarang\agent\data\扫地机器人100问2.txt
+Traceback (most recent call last):
+  File "F:\Users\44337\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_community\document_loaders\text.py", line 43, in lazy_load
+    text = f.read()
+           ^^^^^^^^
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xab in position 4: illegal multibyte sequence
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\heimarang\agent\rag\vector_store.py", line 62, in load_document
+    documents:list[Document]=get_file_documents(path)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\heimarang\agent\rag\vector_store.py", line 47, in get_file_documents
+    return txtloader(readpath)
+           ^^^^^^^^^^^^^^^^^^^
+  File "F:\heimarang\agent\utils\file_handler.py", line 44, in txtloader
+    return TextLoader(file_path,passwd).load()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Users\44337\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\document_loaders\base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Users\44337\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_community\document_loaders\text.py", line 56, in lazy_load
+    raise RuntimeError(f"Error loading {self.file_path}") from e
+RuntimeError: Error loading F:\heimarang\agent\data\扫地机器人100问2.txt
+2026-03-12 19:00:49,604 - agent - ERROR-vector_store.py:77 - [加载知识库]F:\heimarang\agent\data\扫拖一体机器人100问.txt加载失败：Error loading F:\heimarang\agent\data\扫拖一体机器人100问.txt
+Traceback (most recent call last):
+  File "F:\Users\44337\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_community\document_loaders\text.py", line 43, in lazy_load
+    text = f.read()
+           ^^^^^^^^
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xab in position 4: illegal multibyte sequence
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\heimarang\agent\rag\vector_store.py", line 62, in load_document
+    documents:list[Document]=get_file_documents(path)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\heimarang\agent\rag\vector_store.py", line 47, in get_file_documents
+    return txtloader(readpath)
+           ^^^^^^^^^^^^^^^^^^^
+  File "F:\heimarang\agent\utils\file_handler.py", line 44, in txtloader
+    return TextLoader(file_path,passwd).load()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Users\44337\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\document_loaders\base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Users\44337\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_community\document_loaders\text.py", line 56, in lazy_load
+    raise RuntimeError(f"Error loading {self.file_path}") from e
+RuntimeError: Error loading F:\heimarang\agent\data\扫拖一体机器人100问.txt
+2026-03-12 19:00:49,606 - agent - ERROR-vector_store.py:77 - [加载知识库]F:\heimarang\agent\data\故障排除.txt加载失败：Error loading F:\heimarang\agent\data\故障排除.txt
+Traceback (most recent call last):
+  File "F:\Users\44337\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_community\document_loaders\text.py", line 43, in lazy_load
+    text = f.read()
+           ^^^^^^^^
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xab in position 2: illegal multibyte sequence
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\heimarang\agent\rag\vector_store.py", line 62, in load_document
+    documents:list[Document]=get_file_documents(path)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\heimarang\agent\rag\vector_store.py", line 47, in get_file_documents
+    return txtloader(readpath)
+           ^^^^^^^^^^^^^^^^^^^
+  File "F:\heimarang\agent\utils\file_handler.py", line 44, in txtloader
+    return TextLoader(file_path,passwd).load()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Users\44337\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\document_loaders\base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Users\44337\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_community\document_loaders\text.py", line 56, in lazy_load
+    raise RuntimeError(f"Error loading {self.file_path}") from e
+RuntimeError: Error loading F:\heimarang\agent\data\故障排除.txt
+2026-03-12 19:00:49,607 - agent - ERROR-vector_store.py:77 - [加载知识库]F:\heimarang\agent\data\维护保养.txt加载失败：Error loading F:\heimarang\agent\data\维护保养.txt
+Traceback (most recent call last):
+  File "F:\Users\44337\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_community\document_loaders\text.py", line 43, in lazy_load
+    text = f.read()
+           ^^^^^^^^
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xab in position 4: illegal multibyte sequence
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\heimarang\agent\rag\vector_store.py", line 62, in load_document
+    documents:list[Document]=get_file_documents(path)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\heimarang\agent\rag\vector_store.py", line 47, in get_file_documents
+    return txtloader(readpath)
+           ^^^^^^^^^^^^^^^^^^^
+  File "F:\heimarang\agent\utils\file_handler.py", line 44, in txtloader
+    return TextLoader(file_path,passwd).load()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Users\44337\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\document_loaders\base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Users\44337\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_community\document_loaders\text.py", line 56, in lazy_load
+    raise RuntimeError(f"Error loading {self.file_path}") from e
+RuntimeError: Error loading F:\heimarang\agent\data\维护保养.txt
+2026-03-12 19:00:49,608 - agent - ERROR-vector_store.py:77 - [加载知识库]F:\heimarang\agent\data\选购指南.txt加载失败：Error loading F:\heimarang\agent\data\选购指南.txt
+Traceback (most recent call last):
+  File "F:\Users\44337\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_community\document_loaders\text.py", line 43, in lazy_load
+    text = f.read()
+           ^^^^^^^^
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xab in position 2: illegal multibyte sequence
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\heimarang\agent\rag\vector_store.py", line 62, in load_document
+    documents:list[Document]=get_file_documents(path)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\heimarang\agent\rag\vector_store.py", line 47, in get_file_documents
+    return txtloader(readpath)
+           ^^^^^^^^^^^^^^^^^^^
+  File "F:\heimarang\agent\utils\file_handler.py", line 44, in txtloader
+    return TextLoader(file_path,passwd).load()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Users\44337\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\document_loaders\base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Users\44337\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_community\document_loaders\text.py", line 56, in lazy_load
+    raise RuntimeError(f"Error loading {self.file_path}") from e
+RuntimeError: Error loading F:\heimarang\agent\data\选购指南.txt
+2026-03-12 19:02:32,517 - agent - INFO-vector_store.py:75 - [加载知识库]F:\heimarang\agent\data\扫地机器人100问.pdf加载成功
+2026-03-12 19:02:32,518 - agent - ERROR-vector_store.py:77 - [加载知识库]F:\heimarang\agent\data\扫地机器人100问2.txt加载失败：Error loading F:\heimarang\agent\data\扫地机器人100问2.txt
+Traceback (most recent call last):
+  File "F:\Users\44337\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_community\document_loaders\text.py", line 43, in lazy_load
+    text = f.read()
+           ^^^^^^^^
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xab in position 4: illegal multibyte sequence
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\heimarang\agent\rag\vector_store.py", line 62, in load_document
+    documents:list[Document]=get_file_documents(path)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\heimarang\agent\rag\vector_store.py", line 47, in get_file_documents
+    return txtloader(readpath)
+           ^^^^^^^^^^^^^^^^^^^
+  File "F:\heimarang\agent\utils\file_handler.py", line 44, in txtloader
+    return TextLoader(file_path,passwd).load()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Users\44337\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\document_loaders\base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Users\44337\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_community\document_loaders\text.py", line 56, in lazy_load
+    raise RuntimeError(f"Error loading {self.file_path}") from e
+RuntimeError: Error loading F:\heimarang\agent\data\扫地机器人100问2.txt
+2026-03-12 19:02:32,520 - agent - ERROR-vector_store.py:77 - [加载知识库]F:\heimarang\agent\data\扫拖一体机器人100问.txt加载失败：Error loading F:\heimarang\agent\data\扫拖一体机器人100问.txt
+Traceback (most recent call last):
+  File "F:\Users\44337\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_community\document_loaders\text.py", line 43, in lazy_load
+    text = f.read()
+           ^^^^^^^^
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xab in position 4: illegal multibyte sequence
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\heimarang\agent\rag\vector_store.py", line 62, in load_document
+    documents:list[Document]=get_file_documents(path)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\heimarang\agent\rag\vector_store.py", line 47, in get_file_documents
+    return txtloader(readpath)
+           ^^^^^^^^^^^^^^^^^^^
+  File "F:\heimarang\agent\utils\file_handler.py", line 44, in txtloader
+    return TextLoader(file_path,passwd).load()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Users\44337\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\document_loaders\base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Users\44337\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_community\document_loaders\text.py", line 56, in lazy_load
+    raise RuntimeError(f"Error loading {self.file_path}") from e
+RuntimeError: Error loading F:\heimarang\agent\data\扫拖一体机器人100问.txt
+2026-03-12 19:02:32,521 - agent - ERROR-vector_store.py:77 - [加载知识库]F:\heimarang\agent\data\故障排除.txt加载失败：Error loading F:\heimarang\agent\data\故障排除.txt
+Traceback (most recent call last):
+  File "F:\Users\44337\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_community\document_loaders\text.py", line 43, in lazy_load
+    text = f.read()
+           ^^^^^^^^
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xab in position 2: illegal multibyte sequence
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\heimarang\agent\rag\vector_store.py", line 62, in load_document
+    documents:list[Document]=get_file_documents(path)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\heimarang\agent\rag\vector_store.py", line 47, in get_file_documents
+    return txtloader(readpath)
+           ^^^^^^^^^^^^^^^^^^^
+  File "F:\heimarang\agent\utils\file_handler.py", line 44, in txtloader
+    return TextLoader(file_path,passwd).load()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Users\44337\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\document_loaders\base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Users\44337\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_community\document_loaders\text.py", line 56, in lazy_load
+    raise RuntimeError(f"Error loading {self.file_path}") from e
+RuntimeError: Error loading F:\heimarang\agent\data\故障排除.txt
+2026-03-12 19:02:32,523 - agent - ERROR-vector_store.py:77 - [加载知识库]F:\heimarang\agent\data\维护保养.txt加载失败：Error loading F:\heimarang\agent\data\维护保养.txt
+Traceback (most recent call last):
+  File "F:\Users\44337\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_community\document_loaders\text.py", line 43, in lazy_load
+    text = f.read()
+           ^^^^^^^^
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xab in position 4: illegal multibyte sequence
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\heimarang\agent\rag\vector_store.py", line 62, in load_document
+    documents:list[Document]=get_file_documents(path)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\heimarang\agent\rag\vector_store.py", line 47, in get_file_documents
+    return txtloader(readpath)
+           ^^^^^^^^^^^^^^^^^^^
+  File "F:\heimarang\agent\utils\file_handler.py", line 44, in txtloader
+    return TextLoader(file_path,passwd).load()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Users\44337\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\document_loaders\base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Users\44337\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_community\document_loaders\text.py", line 56, in lazy_load
+    raise RuntimeError(f"Error loading {self.file_path}") from e
+RuntimeError: Error loading F:\heimarang\agent\data\维护保养.txt
+2026-03-12 19:02:32,525 - agent - ERROR-vector_store.py:77 - [加载知识库]F:\heimarang\agent\data\选购指南.txt加载失败：Error loading F:\heimarang\agent\data\选购指南.txt
+Traceback (most recent call last):
+  File "F:\Users\44337\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_community\document_loaders\text.py", line 43, in lazy_load
+    text = f.read()
+           ^^^^^^^^
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xab in position 2: illegal multibyte sequence
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\heimarang\agent\rag\vector_store.py", line 62, in load_document
+    documents:list[Document]=get_file_documents(path)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\heimarang\agent\rag\vector_store.py", line 47, in get_file_documents
+    return txtloader(readpath)
+           ^^^^^^^^^^^^^^^^^^^
+  File "F:\heimarang\agent\utils\file_handler.py", line 44, in txtloader
+    return TextLoader(file_path,passwd).load()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Users\44337\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_core\document_loaders\base.py", line 43, in load
+    return list(self.lazy_load())
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Users\44337\AppData\Local\Programs\Python\Python312\Lib\site-packages\langchain_community\document_loaders\text.py", line 56, in lazy_load
+    raise RuntimeError(f"Error loading {self.file_path}") from e
+RuntimeError: Error loading F:\heimarang\agent\data\选购指南.txt
+2026-03-12 19:04:43,037 - agent - INFO-vector_store.py:59 - [记载知识库]F:\heimarang\agent\data\扫地机器人100问.pdf已存在，跳过
+2026-03-12 19:04:43,038 - agent - ERROR-vector_store.py:77 - [加载知识库]F:\heimarang\agent\data\扫地机器人100问2.txt加载失败：TextLoader.__init__() got multiple values for argument 'encoding'
+Traceback (most recent call last):
+  File "F:\heimarang\agent\rag\vector_store.py", line 62, in load_document
+    documents:list[Document]=get_file_documents(path)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\heimarang\agent\rag\vector_store.py", line 47, in get_file_documents
+    return txtloader(readpath)
+           ^^^^^^^^^^^^^^^^^^^
+  File "F:\heimarang\agent\utils\file_handler.py", line 44, in txtloader
+    return TextLoader(file_path,passwd,encoding="utf-8").load()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: TextLoader.__init__() got multiple values for argument 'encoding'
+2026-03-12 19:04:43,040 - agent - ERROR-vector_store.py:77 - [加载知识库]F:\heimarang\agent\data\扫拖一体机器人100问.txt加载失败：TextLoader.__init__() got multiple values for argument 'encoding'
+Traceback (most recent call last):
+  File "F:\heimarang\agent\rag\vector_store.py", line 62, in load_document
+    documents:list[Document]=get_file_documents(path)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\heimarang\agent\rag\vector_store.py", line 47, in get_file_documents
+    return txtloader(readpath)
+           ^^^^^^^^^^^^^^^^^^^
+  File "F:\heimarang\agent\utils\file_handler.py", line 44, in txtloader
+    return TextLoader(file_path,passwd,encoding="utf-8").load()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: TextLoader.__init__() got multiple values for argument 'encoding'
+2026-03-12 19:04:43,041 - agent - ERROR-vector_store.py:77 - [加载知识库]F:\heimarang\agent\data\故障排除.txt加载失败：TextLoader.__init__() got multiple values for argument 'encoding'
+Traceback (most recent call last):
+  File "F:\heimarang\agent\rag\vector_store.py", line 62, in load_document
+    documents:list[Document]=get_file_documents(path)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\heimarang\agent\rag\vector_store.py", line 47, in get_file_documents
+    return txtloader(readpath)
+           ^^^^^^^^^^^^^^^^^^^
+  File "F:\heimarang\agent\utils\file_handler.py", line 44, in txtloader
+    return TextLoader(file_path,passwd,encoding="utf-8").load()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: TextLoader.__init__() got multiple values for argument 'encoding'
+2026-03-12 19:04:43,043 - agent - ERROR-vector_store.py:77 - [加载知识库]F:\heimarang\agent\data\维护保养.txt加载失败：TextLoader.__init__() got multiple values for argument 'encoding'
+Traceback (most recent call last):
+  File "F:\heimarang\agent\rag\vector_store.py", line 62, in load_document
+    documents:list[Document]=get_file_documents(path)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\heimarang\agent\rag\vector_store.py", line 47, in get_file_documents
+    return txtloader(readpath)
+           ^^^^^^^^^^^^^^^^^^^
+  File "F:\heimarang\agent\utils\file_handler.py", line 44, in txtloader
+    return TextLoader(file_path,passwd,encoding="utf-8").load()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: TextLoader.__init__() got multiple values for argument 'encoding'
+2026-03-12 19:04:43,044 - agent - ERROR-vector_store.py:77 - [加载知识库]F:\heimarang\agent\data\选购指南.txt加载失败：TextLoader.__init__() got multiple values for argument 'encoding'
+Traceback (most recent call last):
+  File "F:\heimarang\agent\rag\vector_store.py", line 62, in load_document
+    documents:list[Document]=get_file_documents(path)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\heimarang\agent\rag\vector_store.py", line 47, in get_file_documents
+    return txtloader(readpath)
+           ^^^^^^^^^^^^^^^^^^^
+  File "F:\heimarang\agent\utils\file_handler.py", line 44, in txtloader
+    return TextLoader(file_path,passwd,encoding="utf-8").load()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: TextLoader.__init__() got multiple values for argument 'encoding'
+2026-03-12 19:05:42,175 - agent - INFO-vector_store.py:59 - [记载知识库]F:\heimarang\agent\data\扫地机器人100问.pdf已存在，跳过
+2026-03-12 19:05:47,097 - agent - INFO-vector_store.py:75 - [加载知识库]F:\heimarang\agent\data\扫地机器人100问2.txt加载成功
+2026-03-12 19:05:52,963 - agent - INFO-vector_store.py:75 - [加载知识库]F:\heimarang\agent\data\扫拖一体机器人100问.txt加载成功
+2026-03-12 19:06:03,120 - agent - INFO-vector_store.py:75 - [加载知识库]F:\heimarang\agent\data\故障排除.txt加载成功
+2026-03-12 19:06:09,062 - agent - INFO-vector_store.py:75 - [加载知识库]F:\heimarang\agent\data\维护保养.txt加载成功
+2026-03-12 19:06:14,270 - agent - INFO-vector_store.py:75 - [加载知识库]F:\heimarang\agent\data\选购指南.txt加载成功
+2026-03-12 19:07:12,477 - agent - ERROR-vector_store.py:77 - [加载知识库]F:\heimarang\agent\data\扫地机器人100问.pdf加载失败：PyPDFLoader.__init__() got an unexpected keyword argument 'encoding'
+Traceback (most recent call last):
+  File "F:\heimarang\agent\rag\vector_store.py", line 62, in load_document
+    documents:list[Document]=get_file_documents(path)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\heimarang\agent\rag\vector_store.py", line 49, in get_file_documents
+    return pdfloader(readpath)
+           ^^^^^^^^^^^^^^^^^^^
+  File "F:\heimarang\agent\utils\file_handler.py", line 41, in pdfloader
+    return PyPDFLoader(file_path,passwd,encoding="utf-8").load()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: PyPDFLoader.__init__() got an unexpected keyword argument 'encoding'
+2026-03-12 19:07:17,569 - agent - INFO-vector_store.py:75 - [加载知识库]F:\heimarang\agent\data\扫地机器人100问2.txt加载成功
+2026-03-12 19:07:30,537 - agent - ERROR-vector_store.py:77 - [加载知识库]F:\heimarang\agent\data\扫地机器人100问.pdf加载失败：PyPDFLoader.__init__() got an unexpected keyword argument 'encoding'
+Traceback (most recent call last):
+  File "F:\heimarang\agent\rag\vector_store.py", line 62, in load_document
+    documents:list[Document]=get_file_documents(path)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\heimarang\agent\rag\vector_store.py", line 49, in get_file_documents
+    return pdfloader(readpath)
+           ^^^^^^^^^^^^^^^^^^^
+  File "F:\heimarang\agent\utils\file_handler.py", line 41, in pdfloader
+    return PyPDFLoader(file_path,passwd,encoding="utf-8").load()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: PyPDFLoader.__init__() got an unexpected keyword argument 'encoding'
+2026-03-12 19:07:30,538 - agent - INFO-vector_store.py:59 - [记载知识库]F:\heimarang\agent\data\扫地机器人100问2.txt已存在，跳过
+2026-03-12 19:07:36,951 - agent - INFO-vector_store.py:75 - [加载知识库]F:\heimarang\agent\data\扫拖一体机器人100问.txt加载成功
+2026-03-12 19:07:47,474 - agent - INFO-vector_store.py:75 - [加载知识库]F:\heimarang\agent\data\故障排除.txt加载成功
+2026-03-12 19:07:53,987 - agent - INFO-vector_store.py:75 - [加载知识库]F:\heimarang\agent\data\维护保养.txt加载成功
+2026-03-12 19:07:59,703 - agent - INFO-vector_store.py:75 - [加载知识库]F:\heimarang\agent\data\选购指南.txt加载成功
+2026-03-12 19:08:52,853 - agent - INFO-vector_store.py:75 - [加载知识库]F:\heimarang\agent\data\扫地机器人100问.pdf加载成功
+2026-03-12 19:08:57,587 - agent - INFO-vector_store.py:75 - [加载知识库]F:\heimarang\agent\data\扫地机器人100问2.txt加载成功
+2026-03-12 19:09:03,413 - agent - INFO-vector_store.py:75 - [加载知识库]F:\heimarang\agent\data\扫拖一体机器人100问.txt加载成功
+2026-03-12 19:09:13,865 - agent - INFO-vector_store.py:75 - [加载知识库]F:\heimarang\agent\data\故障排除.txt加载成功
+2026-03-12 19:09:20,017 - agent - INFO-vector_store.py:75 - [加载知识库]F:\heimarang\agent\data\维护保养.txt加载成功
+2026-03-12 19:09:25,339 - agent - INFO-vector_store.py:75 - [加载知识库]F:\heimarang\agent\data\选购指南.txt加载成功
+2026-03-12 19:10:17,025 - agent - INFO-vector_store.py:75 - [加载知识库]F:\heimarang\agent\data\扫地机器人100问.pdf加载成功
+2026-03-12 19:10:21,770 - agent - INFO-vector_store.py:75 - [加载知识库]F:\heimarang\agent\data\扫地机器人100问2.txt加载成功
+2026-03-12 19:10:27,520 - agent - INFO-vector_store.py:75 - [加载知识库]F:\heimarang\agent\data\扫拖一体机器人100问.txt加载成功
+2026-03-12 19:10:37,343 - agent - INFO-vector_store.py:75 - [加载知识库]F:\heimarang\agent\data\故障排除.txt加载成功
+2026-03-12 19:10:43,400 - agent - INFO-vector_store.py:75 - [加载知识库]F:\heimarang\agent\data\维护保养.txt加载成功
+2026-03-12 19:10:43,400 - agent - INFO-vector_store.py:59 - [记载知识库]F:\heimarang\agent\data\选购指南.txt已存在，跳过
