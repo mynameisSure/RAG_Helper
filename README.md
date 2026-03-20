@@ -1,4 +1,3 @@
-# 智能扫拖机器人客服 Agent
 
 一个基于 `Streamlit + LangChain + Chroma` 的智能客服示例项目，面向扫地机器人/扫拖一体机问答场景，支持知识库检索、工具调用、天气查询、用户使用报告生成等能力。
 
@@ -143,3 +142,7 @@ streamlit run app.py
 ## License
 
 如需开源发布，建议补充项目许可证，例如 `MIT`。
+=======
+# RAG_Helper
+基于 LangChain 的 RAG 智能客服 Agent 系统
+>>>>>>> d7ffa7752790bcb9ee3b50ee1d878fecb97c04cf
