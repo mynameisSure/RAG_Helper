@@ -124,25 +124,5 @@ streamlit run app.py
 - `tools/middleware.py` 负责工具监控、日志记录和动态 Prompt 切换
 - `react_agent.py` 负责组装 Agent、工具和中间件
 
-## 注意事项
 
-- 上传到 GitHub 前，请务必移除或替换真实 API Key，不要把生产密钥直接提交到仓库
-- `logs/`、`md5.txt`、本地向量库目录属于运行产物，建议通过 `.gitignore` 排除
-- 当前“用户 ID”和“月份”获取逻辑为示例实现，使用了随机值，更适合 Demo 场景
-- 如果知识库未初始化，RAG 问答效果会受到影响
 
-## 后续可优化方向
-
-- 补充 `requirements.txt` 或 `pyproject.toml`
-- 使用环境变量管理密钥
-- 增加 `.gitignore`
-- 为知识库构建增加独立脚本
-- 接入真实用户系统与业务数据库
-
-## License
-
-如需开源发布，建议补充项目许可证，例如 `MIT`。
-=======
-# RAG_Helper
-基于 LangChain 的 RAG 智能客服 Agent 系统
->>>>>>> d7ffa7752790bcb9ee3b50ee1d878fecb97c04cf
